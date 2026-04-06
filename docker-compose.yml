@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: collab-editor
+    restart: always
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./Backend/.env.production
+    environment:
+      - NODE_ENV=production
